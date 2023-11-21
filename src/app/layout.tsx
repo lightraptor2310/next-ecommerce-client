@@ -1,8 +1,12 @@
+
 import type { Metadata } from 'next'
+import Header from '@/components/Header'
 import { Inter } from 'next/font/google'
 import './globals.css'
-
+import { CartContextProvider } from '@/components/CartContext'
+import App from '.'
 const inter = Inter({ subsets: ['latin'] })
+
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+       <App>{children}</App>
+      </body>
     </html>
   )
 }
